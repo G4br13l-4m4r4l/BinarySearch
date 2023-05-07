@@ -11,7 +11,7 @@ public class BinarySearch {
 		int[] vetor = new int[lista];
 		
 		for(int i = 0;i<vetor.length;i++) {
-			vetor[i] = i;
+			vetor[i] = i+1;
 		}
 		
 		System.out.print("What's your number? ");
@@ -32,19 +32,23 @@ public class BinarySearch {
 				achar = true;
 				cont++;
 				break;
-			}else if(vetor[meio]< advinha) {
+			}else if(vetor[meio]<= advinha) {
 				inicio = meio+1;
 				cont++;
-			}else {
+			}else if(vetor[meio] >= advinha){
 				fim = meio-1;
 				cont++;
-			}		
+			}
+			
+		
 		}
+		
 		
 		if(achar == true) {
 			System.out.println(vetor[meio]);
 			System.out.println("Was found in  " + cont + " times");
 		}else {
+			System.out.println(vetor[meio]);
 			System.out.println("Not found!");
 		}
 		
